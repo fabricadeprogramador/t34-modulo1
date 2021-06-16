@@ -1,0 +1,57 @@
+.background-1 {
+  font-family: sans-serif;
+  background-image: url(https://s2.best-wallpaper.net/wallpaper/1920x1200/1704/Abstract-windmill-black-background_1920x1200.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.background-2 {
+  font-family: sans-serif;
+  background-image: url(https://wallpapercave.com/wp/wp2570965.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  color: rgb(84, 84, 88);
+  font-weight: 200;
+}
+
+img {
+  max-width: 200px;
+  min-width: 200px;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0px;
+  background-color: cadetblue;
+  color: white;
+  border: none;
+}
+
+#fundo {
+  background-color: #f1f1f1;
+  width: 30%;
+  margin: 150px auto;
+  padding: 40px;
+  text-align: center;
+}
+
+#links {
+  margin-top: 10px;
+  color: gray;
+}
+
+.entrada {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
