@@ -1,0 +1,35 @@
+body {
+  font-family: sans-serif;
+}
+
+.card {
+  width: 30%;
+  margin: 150px auto;
+  padding: 60px;
+  border: 1px solid black;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 1px 1px 20px gray;
+}
+
+.card input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+
+.card button {
+  padding: 14px;
+  background-color: darkorange;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+.card h1 {
+  font-weight: 300;
+  color: gray;
+}
