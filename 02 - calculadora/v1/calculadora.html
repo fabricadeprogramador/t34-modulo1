@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Calculadora HT</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h1>Calculadora HT</h1>
+
+      <input type="number" id="numero1" placeholder="Número 1" />
+      <input type="number" id="numero2" placeholder="Número 2" />
+
+      <button onclick="somar()">Somar</button>
+    </div>
+  </body>
+
+  <script>
+    function somar() {
+      var n1 = document.getElementById("numero1").value
+      var n2 = document.getElementById("numero2").value
+
+      var n1Convertido = parseFloat(n1)
+      var n2Convertido = parseFloat(n2)
+      var soma = n1Convertido + n2Convertido
+
+      // console.log(soma)
+      alert("O resultado da soma é: " + soma)
+    }
+  </script>
+</html>

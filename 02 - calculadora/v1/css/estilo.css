@@ -29,6 +29,11 @@ body {
   border-radius: 15px;
 }
 
+.card button:hover {
+  background-color: #dd6300;
+  cursor: pointer;
+}
+
 .card h1 {
   font-weight: 300;
   color: gray;
