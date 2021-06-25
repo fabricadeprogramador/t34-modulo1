@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  margin: 0px;
+}
+
+main {
+  width: 70%;
+  padding: 40px;
+}
+
+.centro {
+  text-align: center;
+}
+
+form {
+  width: 70%;
+  margin: auto;
+}
+
+form div {
+  margin: 20px 0px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px;
+}
+
+form button {
+  background-color: rgb(9, 163, 198);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+}
+
+form button:hover {
+  cursor: pointer;
+  background-color: rgb(5, 98, 119);
+}

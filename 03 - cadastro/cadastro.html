@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <title>Cadastro de Cliente - HT</title>
+    <link rel="stylesheet" href="css/estilo.css" />
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <nav id="menu">
+      <h2>Menu</h2>
+
+      <ul>
+        <a href="">
+          <li>Cliente</li>
+        </a>
+
+        <a href="">
+          <li>Usuários</li>
+        </a>
+
+        <a href="">
+          <li>Curso</li>
+        </a>
+
+        <a href="">
+          <li>Professor</li>
+        </a>
+
+        <a href="">
+          <li>Sair</li>
+        </a>
+      </ul>
+    </nav>
+
+    <main>
+      <h1 class="centro">Cadastro de Cliente</h1>
+
+      <form>
+        <div>
+          <input type="text" placeholder="Nome" id="nome" />
+        </div>
+
+        <div>
+          <input type="email" placeholder="E-mail" id="nome" />
+        </div>
+
+        <div>
+          <label>Sexo:</label>
+
+          <label for="masc">Masculino</label>
+          <input type="radio" id="masc" name="sexo" />
+
+          <label for="fem">Feminino</label>
+          <input type="radio" id="fem" name="sexo" />
+        </div>
+
+        <fieldset>
+          <legend>Cursos de Interesse</legend>
+
+          <div>
+            <input type="checkbox" id="web" name="cursos" />
+            <label for="web">Curso de desenvolvimento web</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="mobile" name="cursos" />
+            <label for="mobile">Curso de desenvolvimento mobile</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="desktop" name="cursos" />
+            <label for="desktop">Curso de desenvolvimento desktop</label>
+          </div>
+        </fieldset>
+
+        <div>
+          <label for="estado">Estado:</label>
+          <select name="estado" id="estado">
+            <option value="">Selecione...</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="SP">São Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="foto">Foto:</label>
+          <input type="file" id="foto" />
+        </div>
+
+        <div>
+          <label for="dataNasc">Data Nascimento:</label>
+          <input type="datetime-local" id="dataNasc" />
+        </div>
+
+        <div class="centro">
+          <button>Salvar</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
