@@ -6,6 +6,13 @@
   </head>
   <body>
     <nav id="menu">
+      <img
+        src="img/fechar.svg"
+        alt="Fechar Menu"
+        class="btn-menu-fechar"
+        onclick="fecharMenu()"
+      />
+
       <h2>Menu</h2>
 
       <ul>
@@ -32,6 +39,13 @@
     </nav>
 
     <main>
+      <img
+        src="img/abrir.svg"
+        alt="Abrir Menu"
+        class="btn-menu-abrir"
+        onclick="abrirMenu()"
+      />
+
       <h1 class="centro">Cadastro de Cliente</h1>
 
       <form>
@@ -94,9 +108,19 @@
         </div>
 
         <div class="centro">
-          <button>Salvar</button>
+          <button type="button">Salvar</button>
         </div>
       </form>
     </main>
   </body>
+
+  <script>
+    function abrirMenu() {
+      document.getElementById("menu").classList.add("menu-aberto")
+    }
+
+    function fecharMenu() {
+      document.getElementById("menu").classList.remove("menu-aberto")
+    }
+  </script>
 </html>

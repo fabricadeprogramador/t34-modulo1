@@ -11,10 +11,9 @@ h1 {
 main {
   width: 70%;
   padding: 40px;
-}
-
-.centro {
-  text-align: center;
+  box-sizing: border-box;
+  float: right;
+  transition: width 1s;
 }
 
 form {
@@ -43,4 +42,79 @@ form button {
 form button:hover {
   cursor: pointer;
   background-color: rgb(5, 98, 119);
+  transition: background-color 0.4s;
+}
+
+nav {
+  background-color: rgb(9, 163, 198);
+  width: 30%;
+  height: 100%;
+  padding: 20px 0px;
+  text-align: center;
+  box-sizing: border-box;
+  color: white;
+  position: fixed;
+  float: left;
+  box-shadow: 5px 0px 10px gray;
+  overflow: hidden;
+  transition: width 1s;
+}
+
+nav ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav li {
+  padding: 10px;
+}
+
+nav li:hover {
+  background-color: rgb(5, 98, 119);
+  transition: background-color 0.4s;
+}
+
+.centro {
+  text-align: center;
+}
+
+.btn-menu-abrir {
+  width: 20px;
+  opacity: 0;
+}
+
+.btn-menu-fechar {
+  width: 20px;
+  opacity: 0;
+}
+
+.btn-menu:hover {
+  cursor: pointer;
+}
+
+.menu-aberto {
+  width: 50%;
+}
+
+@media (max-width: 600px) {
+  nav {
+    width: 0%;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .btn-menu-abrir {
+    opacity: 1;
+  }
+
+  .btn-menu-fechar {
+    opacity: 1;
+  }
 }
