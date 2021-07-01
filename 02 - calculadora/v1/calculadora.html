@@ -12,6 +12,7 @@
       <input type="number" id="numero2" placeholder="Número 2" />
 
       <button onclick="somar()">Somar</button>
+      <button onclick="dividir()">Dividir</button>
     </div>
   </body>
 
@@ -26,6 +27,21 @@
 
       // console.log(soma)
       alert("O resultado da soma é: " + soma)
+    }
+
+    function dividir() {
+      var n1 = document.getElementById("numero1").value
+      var n2 = document.getElementById("numero2").value
+
+      var n1Convertido = parseFloat(n1)
+      var n2Convertido = parseFloat(n2)
+
+      if (n2Convertido != 0) {
+        var divisao = n1 / n2
+        alert("O resultado da divisão é: " + divisao)
+      } else {
+        alert("Não pode dividir por zero!")
+      }
     }
   </script>
 </html>
