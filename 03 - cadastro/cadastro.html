@@ -54,7 +54,7 @@
         </div>
 
         <div>
-          <input type="email" placeholder="E-mail" id="nome" />
+          <input type="email" placeholder="E-mail" id="email" />
         </div>
 
         <div>
@@ -108,7 +108,7 @@
         </div>
 
         <div class="centro">
-          <button type="button">Salvar</button>
+          <button type="button" onclick="validar()">Salvar</button>
         </div>
       </form>
     </main>
@@ -121,6 +121,35 @@
 
     function fecharMenu() {
       document.getElementById("menu").classList.remove("menu-aberto")
+    }
+
+    function validar() {
+      //Capturando valores da entrada
+      var nomeCliente = document.getElementById("nome").value
+      var emailCliente = document.getElementById("email").value
+
+      var radioMasculino = document.getElementById("masc").checked
+      var radioFeminino = document.getElementById("fem").checked
+
+      //Verificando se os campos foram preenchidos
+      if (nomeCliente == "") {
+        alert("O campo nome é obrigatório!")
+      }
+
+      if (emailCliente == "") {
+        alert("O campo e-mail é obrigatório!")
+      }
+
+      if (radioFeminino == false && radioMasculino == false) {
+        alert("Preencha o campo sexo!")
+      }
+
+      // Também verifica se os radios referentes ao sexo do cliente foram preenchidos
+      // if(radioFeminino == false){
+      //   if(radioMasculino == false){
+      //     alert("Preencha o campo sexo!")
+      //   }
+      // }
     }
   </script>
 </html>
