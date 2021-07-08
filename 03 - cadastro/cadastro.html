@@ -128,8 +128,22 @@
       var nomeCliente = document.getElementById("nome").value
       var emailCliente = document.getElementById("email").value
 
-      var radioMasculino = document.getElementById("masc").checked
-      var radioFeminino = document.getElementById("fem").checked
+      // var radioMasculino = document.getElementById("masc").checked
+      // var radioFeminino = document.getElementById("fem").checked
+
+      var sexoSelecionado = document.querySelector("[type=radio]:checked")
+
+      // var web = document.getElementById("web").checked
+      // var mobile = document.getElementById("mobile").checked
+      // var desktop = document.getElementById("desktop").checked
+
+      var cursoSelecionado = document.querySelector("[type=checkbox]:checked")
+
+      var estado = document.getElementById("estado").value
+
+      var foto = document.getElementById("foto").value
+
+      var dataNascimento = document.getElementById("dataNasc").value
 
       //Verificando se os campos foram preenchidos
       if (nomeCliente == "") {
@@ -140,9 +154,13 @@
         alert("O campo e-mail é obrigatório!")
       }
 
-      if (radioFeminino == false && radioMasculino == false) {
+      if (sexoSelecionado == null) {
         alert("Preencha o campo sexo!")
       }
+
+      // if (radioFeminino == false && radioMasculino == false) {
+      //   alert("Preencha o campo sexo!")
+      // }
 
       // Também verifica se os radios referentes ao sexo do cliente foram preenchidos
       // if(radioFeminino == false){
@@ -150,6 +168,28 @@
       //     alert("Preencha o campo sexo!")
       //   }
       // }
+
+      if (cursoSelecionado == null) {
+        alert("Selecione pelo menos um curso de interesse!")
+      }
+
+      // if (!web && !mobile && !desktop) {
+      //   alert("Selecione pelo menos um curso de interesse!")
+      // }
+
+      if (estado == "") {
+        alert("Selecione o estado!")
+      }
+
+      if (foto == "") {
+        alert("Selecione uma foto!")
+      }
+
+      if (dataNascimento == "") {
+        alert("Selecione a data de nascimento!")
+      }
+
+      alert()
     }
   </script>
 </html>
