@@ -124,6 +124,9 @@
     }
 
     function validar() {
+      //Criar variável para acumular as mensagens de validação (não preenchimento dos campos)
+      var mensagemFinal = ""
+
       //Capturando valores da entrada
       var nomeCliente = document.getElementById("nome").value
       var emailCliente = document.getElementById("email").value
@@ -147,49 +150,54 @@
 
       //Verificando se os campos foram preenchidos
       if (nomeCliente == "") {
-        alert("O campo nome é obrigatório!")
+        mensagemFinal = mensagemFinal + "O campo nome é obrigatório!\n"
       }
 
       if (emailCliente == "") {
-        alert("O campo e-mail é obrigatório!")
+        mensagemFinal = mensagemFinal + "O campo e-mail é obrigatório!\n"
       }
 
       if (sexoSelecionado == null) {
-        alert("Preencha o campo sexo!")
+        mensagemFinal = mensagemFinal + "Preencha o campo sexo!\n"
       }
 
       // if (radioFeminino == false && radioMasculino == false) {
-      //   alert("Preencha o campo sexo!")
+      //   mensagemFinal = mensagemFinal + "Preencha o campo sexo!\n"
       // }
 
       // Também verifica se os radios referentes ao sexo do cliente foram preenchidos
       // if(radioFeminino == false){
       //   if(radioMasculino == false){
-      //     alert("Preencha o campo sexo!")
+      //     mensagemFinal = mensagemFinal + "Preencha o campo sexo!\n"
       //   }
       // }
 
       if (cursoSelecionado == null) {
-        alert("Selecione pelo menos um curso de interesse!")
+        mensagemFinal =
+          mensagemFinal + "Selecione pelo menos um curso de interesse!\n"
       }
 
       // if (!web && !mobile && !desktop) {
-      //   alert("Selecione pelo menos um curso de interesse!")
+      //   mensagemFinal = mensagemFinal + "Selecione pelo menos um curso de interesse!\n"
       // }
 
       if (estado == "") {
-        alert("Selecione o estado!")
+        mensagemFinal = mensagemFinal + "Selecione o estado!\n"
       }
 
       if (foto == "") {
-        alert("Selecione uma foto!")
+        mensagemFinal = mensagemFinal + "Selecione uma foto!\n"
       }
 
       if (dataNascimento == "") {
-        alert("Selecione a data de nascimento!")
+        mensagemFinal = mensagemFinal + "Selecione a data de nascimento!\n"
       }
 
-      alert()
+      if (mensagemFinal == "") {
+        alert("Cliente cadastrado com sucesso!")
+      } else {
+        alert(mensagemFinal)
+      }
     }
   </script>
 </html>
