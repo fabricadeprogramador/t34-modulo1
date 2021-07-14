@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Maior Número</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+  <body>
+    <h1>CALCULADORA MAIOR</h1>
+    <div class="card">
+      <input type="number" placeholder="Digite um número" id="numero1" />
+      <input type="number" placeholder="Digite um número" id="numero2" />
+    </div>
+
+    <div class="card">
+      <button id="botao" onclick="numeroMaior()">Maior</button>
+    </div>
+  </body>
+  <script>
+    function numeroMaior() {
+      var n1 = document.getElementById("numero1").value
+      var n2 = document.getElementById("numero2").value
+      var n1Convertido = parseFloat(n1)
+      var n2Convertido = parseFloat(n2)
+
+      if (n1Convertido > n2Convertido) {
+        alert("O número maior é " + n1Convertido)
+      } else if (n2Convertido > n1Convertido) {
+        alert("O número maior é " + n2Convertido)
+      } else {
+        alert("Os números são iguais")
+      }
+    }
+  </script>
+</html>
