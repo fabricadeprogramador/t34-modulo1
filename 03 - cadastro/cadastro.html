@@ -46,6 +46,15 @@
         onclick="abrirMenu()"
       />
 
+      <div class="mensagens" id="janelaMensagem">
+        <img
+          src="img/fechar.svg"
+          alt="Fechar Mensagem"
+          onclick="fecharMensagem()"
+        />
+        <span id="textoMensagem"> </span>
+      </div>
+
       <h1 class="centro">Cadastro de Cliente</h1>
 
       <form>
@@ -110,6 +119,8 @@
         <div class="centro">
           <button type="button" onclick="validar()">Salvar</button>
         </div>
+
+        <div id="teste"></div>
       </form>
     </main>
   </body>
@@ -185,19 +196,33 @@
         mensagemFinal = mensagemFinal + "Selecione o estado!\n"
       }
 
-      if (foto == "") {
-        mensagemFinal = mensagemFinal + "Selecione uma foto!\n"
-      }
+      // if (foto == "") {
+      //   mensagemFinal = mensagemFinal + "Selecione uma foto!\n"
+      // }
 
       if (dataNascimento == "") {
         mensagemFinal = mensagemFinal + "Selecione a data de nascimento!\n"
       }
 
       if (mensagemFinal == "") {
-        alert("Cliente cadastrado com sucesso!")
+        document.getElementById("textoMensagem").textContent =
+          "Cliente cadastrado com sucesso!"
+
+        document
+          .getElementById("janelaMensagem")
+          .classList.add("exibir-sucesso")
       } else {
-        alert(mensagemFinal)
+        document.getElementById("textoMensagem").innerText = mensagemFinal
+
+        document.getElementById("janelaMensagem").classList.add("exibir")
       }
+    }
+
+    function fecharMensagem() {
+      document.getElementById("janelaMensagem").classList.remove("exibir")
+      document
+        .getElementById("janelaMensagem")
+        .classList.remove("exibir-sucesso")
     }
   </script>
 </html>
