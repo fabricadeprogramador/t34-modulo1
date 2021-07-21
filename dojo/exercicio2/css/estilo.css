@@ -1,11 +1,19 @@
 .inputs {
   margin: 15px;
 }
+.container {
+  width: 33%;
+}
 
-.botao {
+#botao {
   margin-top: 15px;
+  padding: 8px 16px;
 }
 
 #card {
   text-align: center;
+}
+.flex {
+  display: flex;
+  margin: auto;
 }
