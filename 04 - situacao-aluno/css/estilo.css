@@ -1,0 +1,43 @@
+body {
+  font-family: sans-serif;
+}
+
+.card {
+  width: 50%;
+  margin: 100px auto;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.entradas {
+  display: flex;
+}
+
+.nota {
+  padding: 40px;
+  width: 33%;
+}
+
+.nota input {
+  margin: 10px 0px;
+}
+
+.botao {
+  padding: 8px 16px;
+  background-color: blueviolet;
+  border-radius: 5px;
+  color: white;
+  border: none;
+}
+
+.resultado {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+}
+
+.separador {
+  margin: 5px 10px;
+}

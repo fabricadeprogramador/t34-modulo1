@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Situação do Aluno</title>
+    <link rel="stylesheet" href="css/estilo.css" />
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Situação do Aluno</h1>
+
+      <div class="entradas">
+        <div class="nota">
+          <div>
+            <label for="n1">Nota 1</label>
+          </div>
+          <div>
+            <input type="number" id="n1" />
+          </div>
+        </div>
+
+        <div class="nota">
+          <div>
+            <label for="n2">Nota 2</label>
+          </div>
+          <div>
+            <input type="number" id="n2" />
+          </div>
+        </div>
+
+        <div class="nota">
+          <div>
+            <label for="n3">Nota 3</label>
+          </div>
+          <div>
+            <input type="number" id="n3" />
+          </div>
+        </div>
+      </div>
+
+      <button class="botao" onclick="verificarSituacao()">
+        Verificar Situação
+      </button>
+
+      <div class="resultado">
+        <div class="separador">
+          <span id="situacao"></span>
+        </div>
+        <div class="separador">
+          <div>
+            <span id="qtdAprovados">Quantidade de Aprovados: 0</span>
+          </div>
+          <div>
+            <span id="qtdReprovados">Quantidade de Reprovados: 0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
