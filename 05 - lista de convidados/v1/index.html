@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de Convidados</title>
+    <link rel="stylesheet" href="css/estilo.css" />
+    <script src="js/listaConvidados.js"></script>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Adicionar Convidado</h2>
+
+      <div>
+        <input
+          type="text"
+          placeholder="Nome do Convidado"
+          id="inputConvidado"
+        />
+      </div>
+
+      <div>
+        <button onclick="adicionarALista()">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Convidados Cadastrados</h2>
+      <span id="lista"> </span>
+    </div>
+  </body>
+</html>
