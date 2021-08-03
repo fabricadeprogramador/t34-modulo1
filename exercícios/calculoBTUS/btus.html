@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Calculadora de BTUS</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/estilo.css" />
+    <script src="js/calculadoraBTUS.js"></script>
+  </head>
+  <body>
+    <div class="background-div">
+      <h1>Quantos BTUS você precisa?</h1>
+
+      <div>
+        <input type="number" id="totalArea" placeholder="Total de área em m²" />
+      </div>
+
+      <div>
+        <input
+          type="number"
+          id="totalPessoas"
+          placeholder="Total de pessoas no ambiente"
+        />
+      </div>
+
+      <div>
+        <input
+          type="number"
+          id="totalEletro"
+          placeholder="Total de eletroeletrônicos"
+        />
+      </div>
+
+      <div>
+        <button onclick="calcularBTUS()">Calcular</button>
+      </div>
+    </div>
+
+    <div class="background-div">
+      <span id="total"></span>
+    </div>
+  </body>
+</html>

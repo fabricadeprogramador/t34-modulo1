@@ -1,0 +1,42 @@
+body {
+  font-family: sans-serif;
+}
+
+.background-div {
+  width: 40%;
+  margin: 50px auto;
+  text-align: center;
+  background-color: cadetblue;
+  color: white;
+  padding: 2%;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px gray;
+}
+
+.background-div h1 {
+  font-weight: 300;
+}
+
+.background-div input {
+  width: 60%;
+  margin: 10px 0px;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px gray;
+}
+
+.background-div button {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(141, 141, 141);
+  color: white;
+  box-shadow: 2px 2px 5px gray;
+}
+
+.background-div button:hover {
+  cursor: pointer;
+  background-color: rgb(83, 83, 83);
+}
