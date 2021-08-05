@@ -13,24 +13,40 @@
       <div>
         <input
           type="text"
-          placeholder="Nome do Convidado"
+          placeholder="Nome do convidado"
           id="inputConvidado"
         />
       </div>
 
       <div>
+        <input type="number" placeholder="Idade do convidado" id="inputIdade" />
+      </div>
+
+      <div class="div-radio">
+        <label>Sexo:</label>
+
+        <label for="inputMasc">Masculino:</label>
+        <input type="radio" id="inputMasc" name="inputSexo" value="M" />
+
+        <label for="inputFem">Feminino:</label>
+        <input type="radio" id="inputFem" name="inputSexo" value="F" />
+      </div>
+
+      <div>
         <button onclick="adicionarALista()">Adicionar</button>
+        <button onclick="limparCampos()">Limpar</button>
       </div>
     </div>
 
     <div class="card">
       <h2>Convidados Cadastrados</h2>
-      <table>
+      <table class="tabela-convidados">
         <thead>
           <tr>
             <th>Nome</th>
             <th>Idade</th>
             <th>Sexo</th>
+            <th></th>
           </tr>
         </thead>
 

@@ -3,6 +3,11 @@ body {
   background-color: #dfdfdf;
 }
 
+img {
+  width: 20px;
+  cursor: pointer;
+}
+
 .card {
   background-color: white;
   padding: 30px;
@@ -18,7 +23,7 @@ body {
   color: gray;
 }
 
-.card input {
+.card input:not([type="radio"]) {
   width: 100%;
   padding: 10px 0px;
   border: none;
@@ -42,4 +47,30 @@ body {
   color: white;
   cursor: pointer;
   transition: 0.3s;
+}
+
+.div-radio {
+  display: flex;
+  padding: 15px;
+}
+
+.div-radio label {
+  margin: 0px 10px;
+}
+
+.tabela-convidados {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid gray;
+  padding: 20px 0px;
+  text-align: left;
+}
+
+th {
+  color: gray;
+  font-weight: 300;
 }
