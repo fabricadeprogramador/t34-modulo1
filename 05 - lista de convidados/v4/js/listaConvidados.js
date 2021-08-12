@@ -3,9 +3,7 @@
  */
 let contador = 1 //Contador usado para setar os novos IDs
 let idEdicao = -1 //Flag de edição
-let nomeAtual = "" //Valor do nome do input atual
-let idadeAtual = "" //Valor da idade do input atual
-let sexoAtual = "" //Valor do sexo do input atual
+let convidado = {} //Cira um objeto vazio que vai conter o convidado atual
 
 /**
  * Invoca o lerDados para setar as variáveis globais,
@@ -33,13 +31,13 @@ function salvar() {
  * ou exibe alerta em caso de não preenchimento dos campos
  */
 function lerDados() {
-  nomeAtual = document.getElementById("inputConvidado").value
-  idadeAtual = document.getElementById("inputIdade").value
+  convidado.nome = document.getElementById("inputConvidado").value
+  convidado.idade = document.getElementById("inputIdade").value
 
   let elementoRadio = document.querySelector("[type=radio]:checked")
 
-  if (nomeAtual != "" && idadeAtual != "" && elementoRadio != null) {
-    sexoAtual = elementoRadio.value
+  if (convidado.nome != "" && convidado.idade != "" && elementoRadio != null) {
+    convidado.sexo = elementoRadio.value
   } else {
     alert("Preencha o nome do convidado!")
   }
@@ -49,7 +47,7 @@ function lerDados() {
  * Apenas chama a função para adicionar novo elemento na lista
  */
 function adicionarALista() {
-  inserirLinha(nomeAtual, idadeAtual, sexoAtual)
+  inserirLinha(convidado)
 }
 
 /**
@@ -61,9 +59,9 @@ function adicionarALista() {
 function confirmarEdicao() {
   let linhaEditar = document.getElementById(idEdicao)
 
-  linhaEditar.children[0].textContent = nomeAtual
-  linhaEditar.children[1].textContent = idadeAtual
-  linhaEditar.children[2].textContent = sexoAtual
+  linhaEditar.children[0].textContent = convidado.nome
+  linhaEditar.children[1].textContent = convidado.idade
+  linhaEditar.children[2].textContent = convidado.sexo
 
   idEdicao = -1
 }
@@ -71,7 +69,7 @@ function confirmarEdicao() {
 /**
  * Cria uma nova linha contendo as informações lidas e insere na tabela
  */
-function inserirLinha(nome, idade, sexo) {
+function inserirLinha(convidado) {
   //Iniciando algoritmo de inserção da linha na tabela
 
   //Busca o elemento tBody da tabela
@@ -88,9 +86,9 @@ function inserirLinha(nome, idade, sexo) {
   let colunaBotaoEditar = document.createElement("td")
 
   //Inserindo os valores dos campos nas respectivas colunas
-  colunaNome.innerText = nome
-  colunaIdade.innerText = idade
-  colunaSexo.innerText = sexo
+  colunaNome.innerText = convidado.nome
+  colunaIdade.innerText = convidado.idade
+  colunaSexo.innerText = convidado.sexo
 
   //Criando icone de deletar
   let botaoDeletar = document.createElement("img")
@@ -104,7 +102,7 @@ function inserirLinha(nome, idade, sexo) {
   botaoDeletar.setAttribute("onclick", `deletarLinha('${contador}')`)
   botaoEditar.setAttribute(
     "onclick",
-    `prepararEdicao('${contador}', '${nome}', '${idade}', '${sexo}')`
+    `prepararEdicao('${contador}', ${JSON.stringify(convidado)})`
   )
 
   //Colocar o botão como filho da linha
@@ -155,13 +153,13 @@ function deletarLinha(id) {
  * Também seta a flag (idEdicao recebe o id da linha), indicando futura edição
  * para a função salvar
  */
-function prepararEdicao(id, nome, idade, sexo) {
+function prepararEdicao(id, convidado) {
   idEdicao = id
 
-  document.getElementById("inputConvidado").value = nome
-  document.getElementById("inputIdade").value = idade
+  document.getElementById("inputConvidado").value = convidado.nome
+  document.getElementById("inputIdade").value = convidado.idade
 
-  if (sexo == "M") {
+  if (convidado.sexo == "M") {
     document.getElementById("inputMasc").checked = true
   } else {
     document.getElementById("inputFem").checked = true
