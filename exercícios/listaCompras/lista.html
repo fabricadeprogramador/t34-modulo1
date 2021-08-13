@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Lista de Compras</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/estilo.css" />
+    <script src="js/listaController.js"></script>
+  </head>
+
+  <body>
+    <div class="card">
+      <h1>Lista de Compras</h1>
+
+      <div>
+        <input type="text" id="nome" placeholder="Nome do produto" />
+      </div>
+
+      <div>
+        <input type="number" id="valor" placeholder="Valor Unitário" />
+      </div>
+
+      <div>
+        <input type="number" id="qtd" placeholder="Quantidade" />
+      </div>
+
+      <div>
+        <button onclick="inserir()">Inserir</button>
+        <button onclick="cancelar()">Cancelar</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Valor Unitário</th>
+            <th>Quantidade</th>
+          </tr>
+        </thead>
+        <tbody id="corpoTabela"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <span id="total"></span>
+    </div>
+  </body>
+</html>
