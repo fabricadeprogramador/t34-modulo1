@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de Convidados - Orientada a Objetos</title>
+    <link rel="stylesheet" href="css/estilo.css" />
+    <script src="js/listaConvidados.js"></script>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Adicionar Convidado</h2>
+
+      <div>
+        <input
+          type="text"
+          placeholder="Nome do convidado"
+          id="inputConvidado"
+        />
+      </div>
+
+      <div>
+        <input type="number" placeholder="Idade do convidado" id="inputIdade" />
+      </div>
+
+      <div class="div-radio">
+        <label>Sexo:</label>
+
+        <label for="inputMasc">Masculino:</label>
+        <input type="radio" id="inputMasc" name="inputSexo" value="M" />
+
+        <label for="inputFem">Feminino:</label>
+        <input type="radio" id="inputFem" name="inputSexo" value="F" />
+      </div>
+
+      <div>
+        <button onclick="controller.salvar()">Salvar</button>
+        <button onclick="controller.limparCampos()">Limpar</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Convidados Cadastrados</h2>
+      <table class="tabela-convidados">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Sexo</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="tabela"></tbody>
+      </table>
+    </div>
+  </body>
+</html>

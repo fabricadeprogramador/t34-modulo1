@@ -1,0 +1,76 @@
+body {
+  font-family: sans-serif;
+  background-color: #dfdfdf;
+}
+
+img {
+  width: 20px;
+  cursor: pointer;
+}
+
+.card {
+  background-color: white;
+  padding: 30px;
+  width: 30%;
+  margin: 30px auto;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  font-weight: 300;
+  color: gray;
+}
+
+.card input:not([type="radio"]) {
+  width: 100%;
+  padding: 10px 0px;
+  border: none;
+  border-bottom: 1px solid gray;
+  color: gray;
+  font-size: 12pt;
+}
+
+.card button {
+  padding: 15px;
+  margin-top: 20px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 30px;
+  font-size: 12pt;
+  color: gray;
+}
+
+.card button:hover {
+  background-color: gray;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.div-radio {
+  display: flex;
+  padding: 15px;
+}
+
+.div-radio label {
+  margin: 0px 10px;
+}
+
+.tabela-convidados {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid gray;
+  padding: 20px 0px;
+  text-align: left;
+}
+
+th {
+  color: gray;
+  font-weight: 300;
+}
