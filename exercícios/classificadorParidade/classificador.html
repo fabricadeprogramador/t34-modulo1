@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title>Classificador de Paridade</title>
+    <meta charset="UTF-8" />
+
+    <style>
+      .card {
+        width: 40%;
+        background-color: rgb(181, 177, 221);
+        margin: 10px auto;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .espacamento {
+        margin-top: 15px;
+      }
+
+      .card button {
+        padding: 10px;
+      }
+
+      .card input {
+        padding: 10px;
+        width: 80%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h1>Classificador de Paridade</h1>
+      <div class="espacamento">
+        <input type="number" placeholder="Digite o número" id="numero1" />
+      </div>
+      <button class="espacamento" onclick="classificador.inserirEClassificar()">
+        Inserir e Classificar
+      </button>
+    </div>
+    <div class="card">
+      Números Adicionados:
+      <span id="resultado"></span>
+    </div>
+  </body>
+  <script>
+    class ClassificadorController {
+      constructor() {
+        this.numerosAdicionados = []
+      }
+      lerDados() {
+        let numero = document.getElementById("numero1").valueAsNumber
+        return numero
+      }
+      inserirEClassificar() {
+        let numero = this.lerDados()
+        // para que seja PAR o resto da divisão do nro por 2 tem que ser igual a 0
+        if (numero % 2 == 0) {
+          alert(`O número ${numero} é PAR`)
+        } else {
+          alert(`O número ${numero} é ÍMPAR`)
+        }
+        this.numerosAdicionados[this.numerosAdicionados.length] = numero
+        this.imprimirNumeros()
+        this.limpar()
+      }
+
+      imprimirNumeros() {
+        document.getElementById("resultado").innerText = this.numerosAdicionados
+      }
+      limpar() {
+        document.getElementById("numero1").value = ""
+      }
+    }
+    let classificador = new ClassificadorController()
+  </script>
+</html>
