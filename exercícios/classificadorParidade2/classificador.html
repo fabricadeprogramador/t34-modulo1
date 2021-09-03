@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>Classificador de Paridade</title>
+    <meta charset="UTF-8" />
+
+    <style>
+      .card {
+        width: 40%;
+        background-color: rgb(181, 177, 221);
+        margin: 10px auto;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .espacamento {
+        margin-top: 15px;
+      }
+
+      .card button {
+        padding: 10px;
+      }
+
+      .card input {
+        padding: 10px;
+        width: 80%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h1>Classificador de Paridade</h1>
+      <div class="espacamento">
+        <input type="number" placeholder="Digite o número" id="numero1" />
+      </div>
+      <button class="espacamento" onclick="classificador.inserirEClassificar()">
+        Inserir e Classificar
+      </button>
+    </div>
+    <div class="card">
+      Números Pares:
+      <span id="spanPares"></span>
+    </div>
+
+    <div class="card">
+      Números Ímpares:
+      <span id="spanImpares"></span>
+    </div>
+  </body>
+  <script>
+    class ClassificadorParidade {
+      constructor() {
+        this.pares = []
+        this.impares = []
+      }
+
+      lerDados() {
+        return document.getElementById("numero1").valueAsNumber
+      }
+
+      ehValido(valor) {
+        if (isNaN(valor)) return false
+
+        return true
+      }
+
+      inserirEClassificar() {
+        let numeroLido = this.lerDados()
+
+        if (this.ehValido(numeroLido)) {
+          if (numeroLido % 2 == 0) {
+            this.pares.push(numeroLido)
+            alert(`O número ${numeroLido} é PAR!`)
+          } else {
+            this.impares.push(numeroLido)
+            alert(`O número ${numeroLido} é ÍMPAR!`)
+          }
+        } else {
+          alert("Número Inválido!")
+        }
+
+        this.atualizarDados()
+        this.limpar()
+      }
+
+      atualizarDados() {
+        document.getElementById("spanPares").innerText = this.pares.join(" - ")
+        document.getElementById("spanImpares").innerText =
+          this.impares.join(" . ")
+      }
+
+      limpar() {
+        document.getElementById("numero1").value = ""
+      }
+    }
+
+    let classificador = new ClassificadorParidade()
+  </script>
+</html>
