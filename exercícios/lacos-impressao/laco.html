@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Estruturas de Repetição</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <input type="number" placeholder="Digite o número limite" id="num" />
+    <button onclick="imprimir()">Imprimir</button>
+    <button onclick="imprimirPares()">Imprimir Pares</button>
+    <button onclick="imprimirImpares()">Imprimir Ímpares</button>
+  </body>
+
+  <script>
+    function imprimir() {
+      let limite = document.getElementById("num").valueAsNumber
+      for (let i = 1; i <= limite; i++) {
+        console.log(i)
+      }
+    }
+
+    // function imprimirImpares() {
+    //   let limite = document.getElementById("num").valueAsNumber
+
+    //   for (let i = 1; i <= limite; i = i + 2) {
+    //     console.log(i)
+    //   }
+    // }
+
+    function imprimirImpares() {
+      let limite = document.getElementById("num").valueAsNumber
+
+      for (let i = 1; i <= limite; i++) {
+        if (i % 2 != 0) {
+          console.log(i)
+        }
+      }
+    }
+
+    function imprimirPares() {
+      let limite = document.getElementById("num").valueAsNumber
+
+      for (let i = 2; i <= limite; i = i + 2) {
+        console.log(i)
+      }
+    }
+  </script>
+</html>
