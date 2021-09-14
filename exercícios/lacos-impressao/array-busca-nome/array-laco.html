@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Lista de nomes com busca</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div class="fundo">
+      <h1>Buscar nome</h1>
+
+      <div>
+        <input type="text" placeholder="Digite o nome" id="nome" />
+      </div>
+
+      <div>
+        <button onclick="buscador.adicionar()">Adicionar</button>
+        <button onclick="buscador.limpar()">Limpar</button>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          placeholder="Digite o nome para buscar"
+          id="nomeBusca"
+        />
+      </div>
+
+      <div>
+        <button onclick="buscador.buscar()">Buscar</button>
+      </div>
+    </div>
+
+    <div class="fundo">
+      <span id="nomes"></span>
+    </div>
+  </body>
+</html>
