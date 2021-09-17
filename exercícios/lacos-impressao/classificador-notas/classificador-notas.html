@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Classificador de Notas</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div class="fundo">
+      <h1>Controle de Notas</h1>
+
+      <div>
+        <input type="number" placeholder="Digite a nota" id="nota" />
+      </div>
+
+      <div>
+        <button onclick="gerenciador.adicionar()">Adicionar</button>
+        <button onclick="gerenciador.classificar()">Classificar</button>
+      </div>
+    </div>
+
+    <div class="fundo">
+      <div>
+        <div>
+          <label for="maior">Maior:</label>
+          <span id="maior"></span>
+        </div>
+        <div>
+          <label for="menor">Menor:</label>
+          <span id="menor"></span>
+        </div>
+        <div>
+          <label for="media">Média:</label>
+          <span id="media"></span>
+        </div>
+      </div>
+      <ol id="listaNotas"></ol>
+    </div>
+  </body>
+</html>

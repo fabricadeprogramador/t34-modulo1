@@ -1,0 +1,45 @@
+body {
+  font-family: sans-serif;
+}
+
+.fundo {
+  background-color: dodgerblue;
+  width: 30%;
+  padding: 30px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 30px auto;
+  color: white;
+}
+
+.fundo h1 {
+  color: white;
+  font-weight: 300;
+}
+
+.fundo div {
+  margin: 20px 0px;
+}
+
+.fundo input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.fundo button {
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.fundo button:hover {
+  cursor: pointer;
+}
+
+.fundo span {
+  color: white;
+}
