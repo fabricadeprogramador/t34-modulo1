@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Estacionamento HT</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" placeholder="Modelo" id="modelo" />
+      <input type="text" placeholder="Marca" id="marca" />
+      <input type="number" placeholder="Ano" id="ano" />
+
+      <button onclick="adicionar()">Adicionar</button>
+    </div>
+
+    <div>
+      <ol id="lista"></ol>
+    </div>
+  </body>
+
+  <script>
+    let carros = []
+
+    function lerDados() {
+      //Ler os dados
+      let modelo = document.getElementById("modelo").value
+      let marca = document.getElementById("marca").value
+      let ano = document.getElementById("ano").valueAsNumber
+
+      //Colocar os dados em um objeto
+      let carroNovo = {}
+      carroNovo.modelo = modelo
+      carroNovo.marca = marca
+      carroNovo.ano = ano
+
+      return carroNovo
+    }
+
+    function validar(carro) {
+      if (carro.modelo == "" || carro.marca == "" || isNaN(carro.ano)) {
+        return false
+      }
+
+      return true
+    }
+
+    function adicionar() {
+      //Chama a função lerDados para ler os dados do carro digitados pelo usuário
+      //E espera o carro retornado
+      let carroNovo = lerDados()
+
+      //Validação para verificar se os campos foram preenchidos ou não
+      //Caso todos os campos foram preenchidos validar retorna true
+      //Caso contrário, validar retorna false
+      let ehValido = validar(carroNovo)
+
+      if (ehValido) {
+        //Colocar o objeto no array(carros)
+        carros.push(carroNovo)
+        //Limpar os campos
+        limpar()
+
+        //Imprimir o array
+        imprimir()
+
+        alert("Carro adicionado com sucesso!")
+      } else {
+        alert("Preencha todos os campos!")
+      }
+    }
+
+    function imprimir() {
+      //Zerar a lista
+      let lista = document.getElementById("lista")
+      lista.innerHTML = ""
+
+      //For para percorrer todas as posições do array carros
+      for (let i = 0; i < carros.length; i++) {
+        //Extrair as informações do objeto da posição atual(i)
+        let modelo = carros[i].modelo
+        let marca = carros[i].marca
+        let ano = carros[i].ano
+
+        //Criar uma string no formato de impressão (modelo, marca, ano)
+        let carroString = `${modelo}, ${marca}, ${ano}`
+
+        //Criar o item novo da lista (li)
+        let novoItem = document.createElement("li")
+
+        //Colocar a string no li
+        novoItem.innerText = carroString
+
+        //Colocar o li na lista
+        lista.appendChild(novoItem)
+      }
+    }
+
+    function limpar() {
+      document.getElementById("modelo").value = ""
+      document.getElementById("marca").value = ""
+      document.getElementById("ano").value = ""
+    }
+  </script>
+</html>
