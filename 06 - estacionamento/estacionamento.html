@@ -14,14 +14,34 @@
       <input type="number" placeholder="Ano" id="ano" />
 
       <button onclick="adicionar()">Adicionar</button>
+      <button onclick="limpar()">Cancelar</button>
+      <button onclick="classificar()">Classificar</button>
     </div>
 
     <div>
       <ol id="lista"></ol>
     </div>
+
+    <div>
+      <div>
+        <label for="maisNovo">Carro mais novo:</label>
+        <span id="maisNovo"></span>
+      </div>
+
+      <div>
+        <label for="maisVelho">Carro mais velho:</label>
+        <span id="maisVelho"></span>
+      </div>
+
+      <div>
+        <label for="media">Média dos anos:</label>
+        <span id="media"></span>
+      </div>
+    </div>
   </body>
 
   <script>
+    limpar
     let carros = []
 
     function lerDados() {
@@ -72,6 +92,44 @@
       }
     }
 
+    function classificar() {
+      if (carros.length == 0) {
+        alert("Nenhum carro cadastrado!")
+      } else {
+        let somaDosAnos = 0
+        let maisVelho = carros[0]
+        let maisNovo = carros[0]
+
+        for (let i = 0; i < carros.length; i++) {
+          //Variável que irá acumular a soma dos anos de todos os carros
+          somaDosAnos = somaDosAnos + carros[i].ano
+
+          //Verificação se o carro da posição i é mais velho do que o da variável "maisVelho"
+          if (carros[i].ano < maisVelho.ano) {
+            maisVelho = carros[i]
+          }
+
+          //Verificação se o carro da posição i é mais novo do que o da variável "maisNovo"
+          if (carros[i].ano > maisNovo.ano) {
+            maisNovo = carros[i]
+          }
+        }
+
+        let media = somaDosAnos / carros.length
+
+        //Imprimir o resultado
+        document.getElementById("maisNovo").innerText =
+          converterParaString(maisNovo)
+        document.getElementById("maisVelho").innerText =
+          converterParaString(maisVelho)
+        document.getElementById("media").innerText = media
+      }
+    }
+
+    function converterParaString(carro) {
+      return `Modelo: ${carro.modelo} - Marca: ${carro.marca} - Ano: ${carro.ano}`
+    }
+
     function imprimir() {
       //Zerar a lista
       let lista = document.getElementById("lista")
@@ -79,14 +137,8 @@
 
       //For para percorrer todas as posições do array carros
       for (let i = 0; i < carros.length; i++) {
-        //Extrair as informações do objeto da posição atual(i)
-        let modelo = carros[i].modelo
-        let marca = carros[i].marca
-        let ano = carros[i].ano
-
         //Criar uma string no formato de impressão (modelo, marca, ano)
-        let carroString = `${modelo}, ${marca}, ${ano}`
-
+        let carroString = converterParaString(carros[i])
         //Criar o item novo da lista (li)
         let novoItem = document.createElement("li")
 
