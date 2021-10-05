@@ -5,155 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="css/estacionamento.css" />
+    <script src="js/estacionamento.js"></script>
+
     <title>Estacionamento HT</title>
   </head>
   <body>
-    <div>
-      <input type="text" placeholder="Modelo" id="modelo" />
-      <input type="text" placeholder="Marca" id="marca" />
-      <input type="number" placeholder="Ano" id="ano" />
+    <div class="centro">
+      <h1>Controle do Estacionamento</h1>
+    </div>
+    <div class="container">
+      <div class="input-div">
+        <label for="modelo" class="label-geral">Modelo:</label>
+        <input type="text" id="modelo" />
+      </div>
 
-      <button onclick="adicionar()">Adicionar</button>
-      <button onclick="limpar()">Cancelar</button>
-      <button onclick="classificar()">Classificar</button>
+      <div class="input-div">
+        <label for="marca" class="label-geral">Marca:</label>
+        <input type="text" id="marca" />
+      </div>
+
+      <div class="input-div">
+        <label for="ano" class="label-geral">Ano:</label>
+        <input type="number" id="ano" />
+      </div>
+
+      <div class="buttons">
+        <button onclick="adicionar()">Adicionar</button>
+        <button onclick="limpar()">Cancelar</button>
+        <button onclick="classificar()">Classificar</button>
+      </div>
     </div>
 
-    <div>
-      <ol id="lista"></ol>
+    <div class="div-tabela">
+      <table class="tabela-estacionamento">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Marca</th>
+            <th>Ano</th>
+          </tr>
+        </thead>
+        <tbody id="lista"></tbody>
+      </table>
     </div>
 
-    <div>
-      <div>
-        <label for="maisNovo">Carro mais novo:</label>
-        <span id="maisNovo"></span>
-      </div>
+    <div class="resultados">
+      <fieldset>
+        <legend>Resultados</legend>
 
-      <div>
-        <label for="maisVelho">Carro mais velho:</label>
-        <span id="maisVelho"></span>
-      </div>
+        <div>
+          <label for="maisNovo">Carro mais novo:</label>
+          <span id="maisNovo"></span>
+        </div>
 
-      <div>
-        <label for="media">Média dos anos:</label>
-        <span id="media"></span>
-      </div>
+        <div>
+          <label for="maisVelho">Carro mais velho:</label>
+          <span id="maisVelho"></span>
+        </div>
+
+        <div>
+          <label for="media">Média dos anos:</label>
+          <span id="media"></span>
+        </div>
+      </fieldset>
     </div>
   </body>
-
-  <script>
-    limpar
-    let carros = []
-
-    function lerDados() {
-      //Ler os dados
-      let modelo = document.getElementById("modelo").value
-      let marca = document.getElementById("marca").value
-      let ano = document.getElementById("ano").valueAsNumber
-
-      //Colocar os dados em um objeto
-      let carroNovo = {}
-      carroNovo.modelo = modelo
-      carroNovo.marca = marca
-      carroNovo.ano = ano
-
-      return carroNovo
-    }
-
-    function validar(carro) {
-      if (carro.modelo == "" || carro.marca == "" || isNaN(carro.ano)) {
-        return false
-      }
-
-      return true
-    }
-
-    function adicionar() {
-      //Chama a função lerDados para ler os dados do carro digitados pelo usuário
-      //E espera o carro retornado
-      let carroNovo = lerDados()
-
-      //Validação para verificar se os campos foram preenchidos ou não
-      //Caso todos os campos foram preenchidos validar retorna true
-      //Caso contrário, validar retorna false
-      let ehValido = validar(carroNovo)
-
-      if (ehValido) {
-        //Colocar o objeto no array(carros)
-        carros.push(carroNovo)
-        //Limpar os campos
-        limpar()
-
-        //Imprimir o array
-        imprimir()
-
-        alert("Carro adicionado com sucesso!")
-      } else {
-        alert("Preencha todos os campos!")
-      }
-    }
-
-    function classificar() {
-      if (carros.length == 0) {
-        alert("Nenhum carro cadastrado!")
-      } else {
-        let somaDosAnos = 0
-        let maisVelho = carros[0]
-        let maisNovo = carros[0]
-
-        for (let i = 0; i < carros.length; i++) {
-          //Variável que irá acumular a soma dos anos de todos os carros
-          somaDosAnos = somaDosAnos + carros[i].ano
-
-          //Verificação se o carro da posição i é mais velho do que o da variável "maisVelho"
-          if (carros[i].ano < maisVelho.ano) {
-            maisVelho = carros[i]
-          }
-
-          //Verificação se o carro da posição i é mais novo do que o da variável "maisNovo"
-          if (carros[i].ano > maisNovo.ano) {
-            maisNovo = carros[i]
-          }
-        }
-
-        let media = somaDosAnos / carros.length
-
-        //Imprimir o resultado
-        document.getElementById("maisNovo").innerText =
-          converterParaString(maisNovo)
-        document.getElementById("maisVelho").innerText =
-          converterParaString(maisVelho)
-        document.getElementById("media").innerText = media
-      }
-    }
-
-    function converterParaString(carro) {
-      return `Modelo: ${carro.modelo} - Marca: ${carro.marca} - Ano: ${carro.ano}`
-    }
-
-    function imprimir() {
-      //Zerar a lista
-      let lista = document.getElementById("lista")
-      lista.innerHTML = ""
-
-      //For para percorrer todas as posições do array carros
-      for (let i = 0; i < carros.length; i++) {
-        //Criar uma string no formato de impressão (modelo, marca, ano)
-        let carroString = converterParaString(carros[i])
-        //Criar o item novo da lista (li)
-        let novoItem = document.createElement("li")
-
-        //Colocar a string no li
-        novoItem.innerText = carroString
-
-        //Colocar o li na lista
-        lista.appendChild(novoItem)
-      }
-    }
-
-    function limpar() {
-      document.getElementById("modelo").value = ""
-      document.getElementById("marca").value = ""
-      document.getElementById("ano").value = ""
-    }
-  </script>
 </html>

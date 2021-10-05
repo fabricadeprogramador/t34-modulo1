@@ -1,0 +1,65 @@
+body {
+  font-family: sans-serif;
+  padding: 40px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 0px 40px;
+}
+
+.label-geral {
+  width: 100%;
+  display: flex;
+}
+
+.input-div {
+  margin: 20px;
+}
+
+.buttons {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+}
+
+.buttons button {
+  padding: 8px;
+  margin: 0px 5px;
+  border: none;
+  border: 1px solid gray;
+  background-color: white;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.div-tabela {
+  box-sizing: border-box;
+  padding: 0px 40px;
+  width: 50%;
+  float: left;
+  margin: 30px 10px;
+}
+
+.tabela-estacionamento {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid gray;
+  padding: 20px 0px;
+  text-align: left;
+}
+
+.resultados {
+  box-sizing: border-box;
+  width: 44%;
+  float: right;
+  margin: 50px 10px;
+}
+
+.centro {
+  text-align: center;
+}
